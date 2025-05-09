@@ -3,11 +3,12 @@
 #20250509
 #Depois é uma boa fazer um render dessas linhas ----
 #que mude de tamanho conforme se altera o conteúdo da mensagem
+#E centralizar o Bem vindo também
 
 TITULO = '''
-    -----------------------------
-      Bem vindo ao Saúde Amiga!
     ------------------------------
+       Bem vindo ao Saúde Amiga!
+    -------------------------------
     Aperte o número de sua questão.'''
 
 ALTERNATIVAS = {
