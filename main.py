@@ -1,9 +1,14 @@
 # print("\033[4mThis text\033[0m")
 
+#20250509
+#Depois é uma boa fazer um render dessas linhas ----
+#que mude de tamanho conforme se altera o conteúdo da mensagem
+
 TITULO = '''
-    -------------------------
-    Bem vindo ao Saúde Amiga!
-    -------------------------'''
+    -----------------------------
+      Bem vindo ao Saúde Amiga!
+    ------------------------------
+    Aperte o número de sua questão.'''
 
 ALTERNATIVAS = {
     0:["Como faço meu cadastro?",""],
@@ -18,7 +23,7 @@ ALTERNATIVAS = {
     9:["Ver receita"],
     10:["Ver Resultados"]
 }
-HISTORICO = []
+HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
 
 def render_menu_principal():
