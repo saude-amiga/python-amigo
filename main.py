@@ -2,9 +2,9 @@
 
 def render_menu_principal():
     print('''
-    -------------------------\n
-    Bem vindo ao Saúde Amiga!\n
-    -------------------------\n
+    -------------------------
+    Bem vindo ao Saúde Amiga!
+    -------------------------
     
     ''')
 def main():
