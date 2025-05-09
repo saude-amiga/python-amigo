@@ -23,8 +23,9 @@ POSICAO_NO_HISTORICO = 0
 
 def render_menu_principal():
     print(TITULO)
-    print(ALTERNATIVAS)
-    print(FOOTER)
+    for n, conteudo in ALTERNATIVAS.items():
+        print(f"{n}...{conteudo[0]}")
+    #print(FOOTER)
 
 def main():
     render_menu_principal()
