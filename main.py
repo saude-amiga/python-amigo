@@ -11,18 +11,19 @@ TITULO = '''
     -------------------------------
     Aperte o número de sua questão.'''
 
+#20250510 -> Inserir conteúdo informacional no lugar da tabela conteúdo
 ALTERNATIVAS = {
-    0:["Como faço meu cadastro?",""],
-    1:["Como faço meu login?",""],
-    2:["Como instalo o portal do HC?",""],
-    3:["Como agendo?",""],
-    4:["Como cancelo a consulta?",""],
-    5:["Esqueci minha senha",""],
-    6:["Como reclamar do aplicativo?",""],
-    7:["Como vejo meus documentos?",""],
-    8:["Como abro minha teleconsulta?"],
-    9:["Ver receita"],
-    10:["Ver Resultados"]
+    0:[["Como faço meu cadastro?",""],["CONTEUDO"]],
+    1:[["Como faço meu login?",""],["CONTEUDO"]],
+    2:[["Como instalo o portal do HC?",""],["CONTEUDO"]],
+    3:[["Como agendo?",""],["CONTEUDO"]],
+    4:[["Como cancelo a consulta?",""],["CONTEUDO"]],
+    5:[["Esqueci minha senha",""],["CONTEUDO"]],
+    6:[["Como reclamar do aplicativo?",""],["CONTEUDO"]],
+    7:[["Como vejo meus documentos?",""],["CONTEUDO"]],
+    8:[["Como abro minha teleconsulta?"],["CONTEUDO"]],
+    9:[["Ver receita"],["CONTEUDO"]],
+    10:[["Ver Resultados"],["CONTEUDO"]]
 }
 HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
@@ -35,6 +36,15 @@ def render_footer_navegacao():
     #Adicionar opções para o usuário acessar páginas relacionadas (como elas estão relacionadas?
     # Vai por temas semelhantes e coloca numa lista de relações e depois chamar um método que pega qual 'link' de página deve ser apresentado no footer desta)
 
+def render_titulo(num_janela):
+    print(f'''
+          ------------------------
+          {ALTERNATIVAS.get(num_janela)[0]}
+          ------------------------
+          ''')
+
+def render_corpo_mensagem(num_janela):
+    print(f'''''')
 
 def exibir_informativo(num_janela):
     #Conteúdo relativo ao número da janela
