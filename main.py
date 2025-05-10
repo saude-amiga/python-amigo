@@ -28,6 +28,20 @@ ALTERNATIVAS = {
 HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
 
+def esta_voltando():
+    #Refatorar, talvez esse método ainda não funcione tão bem
+    len(HISTORICO)-1
+    # CAMINHO ATE AQUI.APPEND
+    # THEN LEN(HISTORICO)-2
+    # IF LEN(HISTORICO)-3 == LEN(HISTORICO)-1 
+    # PONTO ANCORA DETECTADO
+    # PARA O LOOP, 
+    # CONSEGUE INVERTER O CAMINHO ATE AQUI?
+    #     SIM - PODE LIBERAR A FUNCAO DE VOLTAR
+    #     RETURN TRUE
+    #     NAO - N PODE LIBERAR A FUNCAO DE VOLTAR
+    # AND SO ON AND SO ON
+    return False
 
 def render_footer_navegacao():
     #20250509
@@ -35,16 +49,22 @@ def render_footer_navegacao():
     #Adicionar alternativas de navegação da página (voltar, avançar, caso o usuário já tenha voltado; exibir página home)
     #Adicionar opções para o usuário acessar páginas relacionadas (como elas estão relacionadas?
     # Vai por temas semelhantes e coloca numa lista de relações e depois chamar um método que pega qual 'link' de página deve ser apresentado no footer desta)
+    print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
+    print("Insira 'v' para voltar. ")
+    print("Insira 'm' para voltar ao menu inicial. ")
+    if(esta_voltando()):
+    print("")
+
 
 def render_titulo(num_janela):
     print(f'''
           ------------------------
-          {ALTERNATIVAS.get(num_janela)[0]}
+          {ALTERNATIVAS.get(num_janela)[0][0]}
           ------------------------
           ''')
 
 def render_corpo_mensagem(num_janela):
-    print(f'''''')
+    print(f'''\n{ALTERNATIVAS.get(num_janela)[1][0]}''')
 
 def exibir_informativo(num_janela):
     #Conteúdo relativo ao número da janela
