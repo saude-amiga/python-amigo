@@ -32,6 +32,11 @@ POSICAO_NO_HISTORICO = 0
 #Tabela de navegação rápida
 PAGINAS_RELACIONADAS = {}
 
+def adicionar_pagina_relacionada(PAGINA_0, PAGINA_2):
+    #Esse método aqui serve apenas para teste e deve ser deletado posteriormente.
+    for coluna, linhas in PAGINAS_RELACIONADAS.items():
+        if coluna.
+
 def esta_voltando():
     CAMINHO_ATE_AQUI = []
     #todo: Refatorar, talvez esse método ainda não funcione tão bem
