@@ -29,8 +29,34 @@ HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
 
 def esta_voltando():
-    #Refatorar, talvez esse método ainda não funcione tão bem
-    len(HISTORICO)-1
+    CAMINHO_ATE_AQUI = []
+    #todo: Refatorar, talvez esse método ainda não funcione tão bem
+    TEM_PONTO_ANCORA = False
+
+    #Adiciona o último item do histório
+    CONTADOR = 1
+    CAMINHO_ATE_AQUI.append(HISTORICO[len(HISTORICO)-CONTADOR])
+
+    #Adiciona o penúltimo item do histório
+    CONTADOR += 1
+    CAMINHO_ATE_AQUI.append(HISTORICO[len(HISTORICO)-CONTADOR])
+
+    while(len(HISTORICO) != CONTADOR):
+        CONTADOR += 1
+        CAMINHO_ATE_AQUI.append(HISTORICO[len(HISTORICO)-CONTADOR])
+
+        #Compara o último item encontrado com o antipenúltimo
+        if(CAMINHO_ATE_AQUI[len(CAMINHO_ATE_AQUI)-1] == CAMINHO_ATE_AQUI[len(CAMINHO_ATE_AQUI)-3]):
+            #Se verdadeiro, o penúltimo item é o item âncora, e devemos ver se é possível fazer o caminho até a âncora a partir da âncora
+            CAMINHO_ATE_AQUI.pop()
+            #Se de fato o usuário estiver voltando, caminho até aqui deve ser igual a um caminho pré âncora.
+            CAMINHO_PRE_ANCORA = HISTORICO[:-len(CAMINHO_ATE_AQUI)]
+            ANCORA = CAMINHO_ATE_AQUI.pop()
+            #Agora caminho até aqui tem apenas o caminho até o item âncora
+            CAMINHO_ATE_AQUI.reverse()
+            #Agora basta verificar se o caminho até aqui está presente na ponta no CAMINHO_PRE_ANCORA
+            if(CAMINHO_PRE_ANCORA[-len(CAMINHO_ATE_AQUI):] == CAMINHO_ATE_AQUI):
+                return True
     # CAMINHO ATE AQUI.APPEND
     # THEN LEN(HISTORICO)-2
     # IF LEN(HISTORICO)-3 == LEN(HISTORICO)-1 
@@ -53,6 +79,7 @@ def render_footer_navegacao():
     print("Insira 'v' para voltar. ")
     print("Insira 'm' para voltar ao menu inicial. ")
     if(esta_voltando()):
+        print("Insira 'a' para avançar. ")
     print("")
 
 
