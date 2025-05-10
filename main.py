@@ -30,7 +30,15 @@ HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
 
 #Tabela de navegação rápida
-PAGINAS_RELACIONADAS = {}
+#Dicionário de exemplo, sujeito e terá alterações
+RELACAO_PAGINAS = {0:[1,2,3], 1:[2,4,6], 4:[4,7,2]}
+
+
+#Retorna todas as páginas que tem um tema a ver com o tema da página atual
+def get_paginas_relacionadas_a_atual(ID_PAGINA_ATUAL):
+    for PAGINAS_COLUNAS, PAGINAS_RELACIONADAS in RELACAO_PAGINAS:
+        if(PAGINAS_COLUNAS == ID_PAGINA_ATUAL):
+            return(PAGINAS_RELACIONADAS)
 
 def esta_voltando():
     CAMINHO_ATE_AQUI = []
