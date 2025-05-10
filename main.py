@@ -81,7 +81,12 @@ def esta_voltando():
     # AND SO ON AND SO ON
     return False
 
-def render_footer_navegacao():
+def render_paginas_relacionadas(num_janela):
+    print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
+    print('Paginas Relacionadas') #20250510 -> Deve haver um método que pega as páginas relacionadas da tabela alternativas usando o get_paginas_relacionadas_a_atual() exibindo o titulo e o id 
+
+
+def render_footer_navegacao(num_janela):
     #20250509
     #Adicionar linha para separar da lista de opções
     #Adicionar alternativas de navegação da página (voltar, avançar, caso o usuário já tenha voltado; exibir página home)
@@ -95,9 +100,6 @@ def render_footer_navegacao():
         print("Insira 'a' para avançar. ")
     #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
     
-    
-    print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
-    print('Paginas Relacionadas')
 
 def render_titulo(num_janela):
     print(f'''
