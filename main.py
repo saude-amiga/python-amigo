@@ -34,9 +34,18 @@ def render_footer_navegacao():
     #Adicionar alternativas de navegação da página (voltar, avançar, caso o usuário já tenha voltado; exibir página home)
     #Adicionar opções para o usuário acessar páginas relacionadas (como elas estão relacionadas?
     # Vai por temas semelhantes e coloca numa lista de relações e depois chamar um método que pega qual 'link' de página deve ser apresentado no footer desta)
+
+
 def exibir_informativo(num_janela):
-    print()
+    #Conteúdo relativo ao número da janela
+    render_titulo(num_janela)
+    render_corpo_mensagem(num_janela)
+    
+    #Conteúdo relativo ao footer de navegação
     render_footer_navegacao()
+
+    #exibir páginas que tem a ver com a atual janela, fazendo uso de uma tabela de relações
+    render_paginas_relacionadas(num_janela)
 
 def selecionar_alternativa():
     alternativa_selecionada = int(input())
