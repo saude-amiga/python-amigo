@@ -26,20 +26,22 @@ ALTERNATIVAS = {
 }
 HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
+
+
 def render_footer_navegacao():
     #20250509
     #Adicionar linha para separar da lista de opções
     #Adicionar alternativas de navegação da página (voltar, avançar, caso o usuário já tenha voltado; exibir página home)
     #Adicionar opções para o usuário acessar páginas relacionadas (como elas estão relacionadas?
     # Vai por temas semelhantes e coloca numa lista de relações e depois chamar um método que pega qual 'link' de página deve ser apresentado no footer desta)
-def exibir_ajuda(num_janela):
+def exibir_informativo(num_janela):
     print()
     render_footer_navegacao()
 
 def selecionar_alternativa():
     alternativa_selecionada = int(input())
     HISTORICO.append(alternativa_selecionada)
-    exibir_ajuda(alternativa_selecionada)
+    exibir_informativo(alternativa_selecionada)
 
 def render_menu_principal():
     print(TITULO)
