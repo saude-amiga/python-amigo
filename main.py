@@ -96,7 +96,9 @@ def render_paginas_relacionadas(num_janela):
     print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
     print('Paginas Relacionadas') #20250510 -> Deve haver um método que pega as páginas relacionadas da tabela alternativas usando o get_paginas_relacionadas_a_atual() exibindo o titulo e o id 
     ID_PAGINAS_RELACIONADAS = get_paginas_relacionadas_a_atual(num_janela)
-    paginas_relacionadas_conteudo = ALTERNATIVAS.get
+    paginas_relacionadas_conteudo = pegar_conteudo_multiplas_paginas(ID_PAGINAS_RELACIONADAS)
+    for id, conjunto in paginas_relacionadas_conteudo:
+        print(f"Insira {id} para acessar a página {conjunto[[0][0]]}\n")
 
 def render_footer_navegacao(num_janela):
     #20250509
@@ -133,8 +135,10 @@ def exibir_informativo(num_janela):
 
     #exibir páginas que tem a ver com a atual janela, fazendo uso de uma tabela de relações
     render_paginas_relacionadas(num_janela)
+    selecionar_alternativa()
 
 def selecionar_alternativa():
+    #20250510 O processo de avançar ou retroceder no histórico deve depender dessa função
     alternativa_selecionada = int(input())
     HISTORICO.append(alternativa_selecionada)
     exibir_informativo(alternativa_selecionada)
