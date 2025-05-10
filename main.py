@@ -25,8 +25,12 @@ ALTERNATIVAS = {
     9:[["Ver receita"],["CONTEUDO"]],
     10:[["Ver Resultados"],["CONTEUDO"]]
 }
+
 HISTORICO = [0]
 POSICAO_NO_HISTORICO = 0
+
+#Tabela de navegação rápida
+PAGINAS_RELACIONADAS = {}
 
 def esta_voltando():
     CAMINHO_ATE_AQUI = []
@@ -78,10 +82,14 @@ def render_footer_navegacao():
     print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
     print("Insira 'v' para voltar. ")
     print("Insira 'm' para voltar ao menu inicial. ")
+    
     if(esta_voltando()):
         print("Insira 'a' para avançar. ")
-    print("")
-
+    #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
+    
+    
+    print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
+    print('Paginas Relacionadas')
 
 def render_titulo(num_janela):
     print(f'''
