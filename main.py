@@ -81,10 +81,22 @@ def esta_voltando():
     # AND SO ON AND SO ON
     return False
 
+def pegar_conteudo_multiplas_paginas(ids):
+    conteudo_colecao = {}
+    #20250510 -> Deve ter um jeito mais bonito de fazer essa procura, mas podemos deixar para refatorar depois
+    #Talvez o que temos a aprender nessa sprint seja que, em uma corrida, menos é mais (e fiz mais do que menos nesse caso).
+    for id in ids:
+        for alternativas_ids, conteudos_e_titulo in ALTERNATIVAS.items():
+            if alternativas_ids == id:
+                conteudo_colecao[id] = conteudos_e_titulo
+                break
+    return conteudo_colecao
+
 def render_paginas_relacionadas(num_janela):
     print('------------------------') #20250510 -> é uma boa ideia fazer um método para renderizar essas linhas
     print('Paginas Relacionadas') #20250510 -> Deve haver um método que pega as páginas relacionadas da tabela alternativas usando o get_paginas_relacionadas_a_atual() exibindo o titulo e o id 
-
+    ID_PAGINAS_RELACIONADAS = get_paginas_relacionadas_a_atual(num_janela)
+    paginas_relacionadas_conteudo = ALTERNATIVAS.get
 
 def render_footer_navegacao(num_janela):
     #20250509
