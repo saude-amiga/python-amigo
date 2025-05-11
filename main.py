@@ -112,7 +112,6 @@ def render_footer_navegacao(num_janela):
     
     if(esta_voltando()):
         print("Insira 'a' para avançar. ")
-    #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
     
 
 def render_titulo(num_janela):
@@ -138,6 +137,7 @@ def exibir_informativo(num_janela):
     selecionar_alternativa()
 
 def selecionar_alternativa():
+    #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
     #20250510 O processo de avançar ou retroceder no histórico deve depender dessa função
     alternativa_selecionada = int(input())
     HISTORICO.append(alternativa_selecionada)
