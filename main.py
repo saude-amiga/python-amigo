@@ -181,7 +181,7 @@ def selecionar_alternativa():
 def render_menu_principal():
     print(TITULO)
     for n, conteudo in ALTERNATIVAS.items():
-        print(f"{n}...{conteudo[0]}")
+        print(f"{n}...{conteudo[0][0]}")
     #print(FOOTER)
 
 def main():
