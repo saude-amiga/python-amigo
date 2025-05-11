@@ -139,9 +139,44 @@ def exibir_informativo(num_janela):
 def selecionar_alternativa():
     #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
     #20250510 O processo de avançar ou retroceder no histórico deve depender dessa função
-    alternativa_selecionada = int(input())
-    HISTORICO.append(alternativa_selecionada)
-    exibir_informativo(alternativa_selecionada)
+    alternativa_selecionada = input()
+    #alternativa_selecionada = se for numero -> TABELA ALTERNATIVAS
+    #alternativa_selecionada = se for letra -> ALTERAR HISTORICO
+
+    #ele não ensinou esse método então n sei se é permitido fazer esse negócio
+    if(alternativa_selecionada.isdigit()):
+        ANCORA = 0
+        VOLTAR = 0
+        alternativa_valor = int(alternativa_selecionada)  
+        HISTORICO.append(alternativa_valor)
+        exibir_informativo(alternativa_valor)
+    else:
+        # Essa parte do condicional aborda se a alternativa inserida é uma string (v, m, a)
+        match alternativa_selecionada:
+            case 'v':
+                #voltar
+                #Volta para o penúltimo item do histórico, já dizia Justin Timberlake what goes around comes around
+                if(VOLTAR == 0):
+                    ANCORA = len(HISTORICO)
+                VOLTAR += 1
+                alternativa_valor = HISTORICO[ANCORA - VOLTAR]
+                HISTORICO.append(alternativa_valor)
+                exibir_informativo(alternativa_valor)
+            case 'm':
+                #menu principal
+                render_menu_principal()
+            case 'a':
+                #todo: verificar se o esta_voltando verifica se o VOLTAR está zerado ou não, se não essa merda vai dar erro
+                if(esta_voltando()):
+                    VOLTAR -= 1
+                    alternativa_valor = HISTORICO[ANCORA - VOLTAR]
+                    HISTORICO.append(alternativa_valor)
+                    exibir_informativo(alternativa_valor)
+                else:
+                    selecionar_alternativa()
+                #avançar
+
+                 
 
 def render_menu_principal():
     print(TITULO)
