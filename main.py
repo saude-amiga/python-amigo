@@ -33,12 +33,12 @@ POSICAO_NO_HISTORICO = 0
 #Dicionário de exemplo, sujeito e terá alterações
 RELACAO_PAGINAS = {0:[1,2,3], 1:[2,4,6], 4:[4,7,2]}
 
-
 #Retorna todas as páginas que tem um tema a ver com o tema da página atual
 def get_paginas_relacionadas_a_atual(ID_PAGINA_ATUAL):
-    for PAGINAS_COLUNAS, PAGINAS_RELACIONADAS in RELACAO_PAGINAS:
+    for PAGINAS_COLUNAS, PAGINAS_RELACIONADAS in RELACAO_PAGINAS.items():
         if(PAGINAS_COLUNAS == ID_PAGINA_ATUAL):
             return(PAGINAS_RELACIONADAS)
+    return []
 
 def esta_voltando():
     CAMINHO_ATE_AQUI = []
@@ -97,8 +97,10 @@ def render_paginas_relacionadas(num_janela):
     print('Paginas Relacionadas') #20250510 -> Deve haver um método que pega as páginas relacionadas da tabela alternativas usando o get_paginas_relacionadas_a_atual() exibindo o titulo e o id 
     ID_PAGINAS_RELACIONADAS = get_paginas_relacionadas_a_atual(num_janela)
     paginas_relacionadas_conteudo = pegar_conteudo_multiplas_paginas(ID_PAGINAS_RELACIONADAS)
-    for id, conjunto in paginas_relacionadas_conteudo:
+    for id, conjunto in paginas_relacionadas_conteudo.items():
         print(f"Insira {id} para acessar a página {conjunto[[0][0]]}\n")
+    if ID_PAGINAS_RELACIONADAS == []:
+        print("Nenhuma página relacionada")
 
 def render_footer_navegacao(num_janela):
     #20250509
@@ -130,19 +132,19 @@ def exibir_informativo(num_janela):
     render_corpo_mensagem(num_janela)
     
     #Conteúdo relativo ao footer de navegação
-    render_footer_navegacao()
+    render_footer_navegacao(num_janela)
 
     #exibir páginas que tem a ver com a atual janela, fazendo uso de uma tabela de relações
     render_paginas_relacionadas(num_janela)
     selecionar_alternativa()
 
 def selecionar_alternativa():
+    
     #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
     #20250510 O processo de avançar ou retroceder no histórico deve depender dessa função
     alternativa_selecionada = input()
     #alternativa_selecionada = se for numero -> TABELA ALTERNATIVAS
     #alternativa_selecionada = se for letra -> ALTERAR HISTORICO
-
     #ele não ensinou esse método então n sei se é permitido fazer esse negócio
     if(alternativa_selecionada.isdigit()):
         ANCORA = 0
@@ -182,7 +184,7 @@ def render_menu_principal():
     print(TITULO)
     for n, conteudo in ALTERNATIVAS.items():
         print(f"{n}...{conteudo[0][0]}")
-    #print(FOOTER)
+    selecionar_alternativa()
 
 def main():
     render_menu_principal()
