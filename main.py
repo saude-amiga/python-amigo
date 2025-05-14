@@ -98,7 +98,7 @@ def render_paginas_relacionadas(num_janela):
     ID_PAGINAS_RELACIONADAS = get_paginas_relacionadas_a_atual(num_janela)
     paginas_relacionadas_conteudo = pegar_conteudo_multiplas_paginas(ID_PAGINAS_RELACIONADAS)
     for id, conjunto in paginas_relacionadas_conteudo.items():
-        print(f"Insira {id} para acessar a página {conjunto[[0][0]]}\n")
+        print(f"Insira {id} para acessar a página {conjunto[[0][0]][0]}\n")
     if ID_PAGINAS_RELACIONADAS == []:
         print("Nenhuma página relacionada")
 
@@ -126,7 +126,7 @@ def render_titulo(num_janela):
 def render_corpo_mensagem(num_janela):
     print(f'''\n{ALTERNATIVAS.get(num_janela)[1][0]}''')
 
-def exibir_informativo(num_janela):
+def exibir_informativo(num_janela, ANCORA, VOLTAR):
     #Conteúdo relativo ao número da janela
     render_titulo(num_janela)
     render_corpo_mensagem(num_janela)
@@ -136,9 +136,9 @@ def exibir_informativo(num_janela):
 
     #exibir páginas que tem a ver com a atual janela, fazendo uso de uma tabela de relações
     render_paginas_relacionadas(num_janela)
-    selecionar_alternativa()
+    selecionar_alternativa(ANCORA, VOLTAR)
 
-def selecionar_alternativa():
+def selecionar_alternativa(ANCORA, VOLTAR):
     
     #20250510 - todo: Adicionar sistema de navegação (mover para a página selecionada ao apertar as teclas amostradinhas uii assim que eu gosto)
     #20250510 O processo de avançar ou retroceder no histórico deve depender dessa função
@@ -151,7 +151,7 @@ def selecionar_alternativa():
         VOLTAR = 0
         alternativa_valor = int(alternativa_selecionada)  
         HISTORICO.append(alternativa_valor)
-        exibir_informativo(alternativa_valor)
+        exibir_informativo(alternativa_valor, ANCORA, VOLTAR)
     else:
         # Essa parte do condicional aborda se a alternativa inserida é uma string (v, m, a)
         match alternativa_selecionada:
@@ -163,7 +163,7 @@ def selecionar_alternativa():
                 VOLTAR += 1
                 alternativa_valor = HISTORICO[ANCORA - VOLTAR]
                 HISTORICO.append(alternativa_valor)
-                exibir_informativo(alternativa_valor)
+                exibir_informativo(alternativa_valor, ANCORA, VOLTAR)
             case 'm':
                 #menu principal
                 render_menu_principal()
@@ -173,18 +173,20 @@ def selecionar_alternativa():
                     VOLTAR -= 1
                     alternativa_valor = HISTORICO[ANCORA - VOLTAR]
                     HISTORICO.append(alternativa_valor)
-                    exibir_informativo(alternativa_valor)
+                    exibir_informativo(alternativa_valor, ANCORA, VOLTAR)
                 else:
-                    selecionar_alternativa()
+                    selecionar_alternativa(ANCORA, VOLTAR)
                 #avançar
 
                  
 
 def render_menu_principal():
+    ANCORA = 0
+    VOLTAR = 0
     print(TITULO)
     for n, conteudo in ALTERNATIVAS.items():
         print(f"{n}...{conteudo[0][0]}")
-    selecionar_alternativa()
+    selecionar_alternativa(ANCORA, VOLTAR)
 
 def main():
     render_menu_principal()
