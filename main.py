@@ -98,7 +98,7 @@ def render_paginas_relacionadas(num_janela):
     ID_PAGINAS_RELACIONADAS = get_paginas_relacionadas_a_atual(num_janela)
     paginas_relacionadas_conteudo = pegar_conteudo_multiplas_paginas(ID_PAGINAS_RELACIONADAS)
     for id, conjunto in paginas_relacionadas_conteudo.items():
-        print(f"Insira {id} para acessar a página {conjunto[[0][0]]}\n")
+        print(f"Insira {id} para acessar a página {conjunto[[0][0]][0]}\n")
     if ID_PAGINAS_RELACIONADAS == []:
         print("Nenhuma página relacionada")
 
