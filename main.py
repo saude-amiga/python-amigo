@@ -18,7 +18,6 @@ alternativas = {
     10: [["Ver Resultados"], ["Seus resultados de exames estão disponíveis em 'Meus Resultados'. Basta acessar o menu e escolher o exame para visualizar o resultado."]]
 }
 
-
 historico = [0]
 posicao_no_historico = 0
 relacao_paginas = {0:[1,2,3], 1:[2,4,6], 4:[4,7,2]}
@@ -67,7 +66,6 @@ def render_footer_navegacao(num_janela):
     if(esta_voltando()):
         print("Insira 'a' para desfazer o voltar. ")
     
-
 def render_titulo(num_janela):
     print(f'''
           ------------------------
@@ -116,7 +114,6 @@ def selecionar_alternativa(ancora, voltar):
                 print("Por favor insira o número da página desejada ou a letra de atalho (minúscula):")
                 selecionar_alternativa(ancora, voltar)
                  
-
 def render_menu_principal():
     ancora = 0
     voltar = 0
