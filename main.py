@@ -150,7 +150,7 @@ def selecionar_alternativa(ancora, voltar):
                     selecionar_alternativa(ancora, voltar)
                 #avançar
             case _:
-                print("Por favor insira o número da página desejada ou a letra de atalho:")
+                print("Por favor insira o número da página desejada ou a letra de atalho (minúscula):")
                 selecionar_alternativa(ancora, voltar)
                  
 
