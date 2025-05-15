@@ -21,17 +21,17 @@ alternativas = {
 historico = [0]
 posicao_no_historico = 0
 relacao_paginas = {
-    0: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],  # Cadastro: relacionado a login, instalação, agendamento, etc.
-    1: [0, 5],                           # Login: relacionado a cadastro e esqueci minha senha
-    2: [0, 3],                           # Instalar portal: relacionado a cadastro e agendamento
-    3: [0, 2, 4, 8],                     # Agendar: relacionado a cadastro, instalação, cancelar, teleconsulta
-    4: [3],                              # Cancelar consulta: relacionado a agendamento
-    5: [1],                              # Esqueci senha: relacionado a login
-    6: [],                               # Reclamar: sem relação direta
-    7: [9, 10],                          # Ver documentos: relacionado a receitas e resultados
-    8: [3],                              # Teleconsulta: relacionado a agendamento
-    9: [7],                              # Ver receita: relacionado a documentos
-    10: [7]                              # Ver resultados: relacionado a documentos
+    0: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],  
+    1: [0, 5],                           
+    2: [0, 3],                           
+    3: [0, 2, 4, 8],                     
+    4: [3],                              
+    5: [1],                              
+    6: [],                               
+    7: [9, 10],                          
+    8: [3],                              
+    9: [7],                              
+    10: [7]                              
 }
 
 def get_paginas_relacionadas_a_atual(ID_PAGINA_ATUAL):
