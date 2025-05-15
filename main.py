@@ -149,7 +149,9 @@ def selecionar_alternativa(ancora, voltar):
                 else:
                     selecionar_alternativa(ancora, voltar)
                 #avançar
-
+            case _:
+                print("Por favor insira o número da página desejada ou a letra de atalho (minúscula):")
+                selecionar_alternativa(ancora, voltar)
                  
 
 def render_menu_principal():
