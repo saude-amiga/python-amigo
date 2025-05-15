@@ -13,18 +13,19 @@ titulo = '''
 
 #20250510 -> Inserir conteúdo informacional no lugar da tabela conteúdo
 alternativas = {
-    0:[["Como faço meu cadastro?",""],["CONTEUDO"]],
-    1:[["Como faço meu login?",""],["CONTEUDO"]],
-    2:[["Como instalo o portal do HC?",""],["CONTEUDO"]],
-    3:[["Como agendo?",""],["CONTEUDO"]],
-    4:[["Como cancelo a consulta?",""],["CONTEUDO"]],
-    5:[["Esqueci minha senha",""],["CONTEUDO"]],
-    6:[["Como reclamar do aplicativo?",""],["CONTEUDO"]],
-    7:[["Como vejo meus documentos?",""],["CONTEUDO"]],
-    8:[["Como abro minha teleconsulta?"],["CONTEUDO"]],
-    9:[["Ver receita"],["CONTEUDO"]],
-    10:[["Ver Resultados"],["CONTEUDO"]]
+    0: [["Como faço meu cadastro?", ""], ["Para se cadastrar, acesse o aplicativo ou site do Saúde Amiga, clique em 'Cadastrar', preencha seus dados pessoais e siga as instruções na tela."]],
+    1: [["Como faço meu login?", ""], ["Para fazer login, informe seu CPF e senha cadastrados na tela inicial do aplicativo ou site do Saúde Amiga."]],
+    2: [["Como instalo o portal do HC?", ""], ["Você pode instalar o portal do HC baixando o aplicativo na loja do seu celular (Google Play ou App Store) ou acessando o site oficial pelo navegador."]],
+    3: [["Como agendo?", ""], ["Para agendar uma consulta, acesse o menu 'Agendamentos', escolha o serviço desejado, selecione a data e horário disponíveis e confirme a marcação."]],
+    4: [["Como cancelo a consulta?", ""], ["Para cancelar uma consulta, vá até 'Meus Agendamentos', selecione a consulta que deseja cancelar e clique em 'Cancelar'. Confirme a operação para finalizar."]],
+    5: [["Esqueci minha senha", ""], ["Na tela de login, clique em 'Esqueci minha senha' e siga as instruções para redefinir sua senha usando seu e-mail ou telefone cadastrado."]],
+    6: [["Como reclamar do aplicativo?", ""], ["Para registrar uma reclamação, acesse o menu 'Ajuda' ou 'Fale Conosco' no aplicativo e envie sua mensagem detalhando o problema encontrado."]],
+    7: [["Como vejo meus documentos?", ""], ["Seus documentos estão disponíveis na área 'Meus Documentos' do aplicativo. Basta acessar o menu e selecionar a opção correspondente."]],
+    8: [["Como abro minha teleconsulta?"], ["No horário agendado, acesse 'Meus Agendamentos', selecione a teleconsulta e clique em 'Iniciar Consulta' para entrar na sala virtual."]],
+    9: [["Ver receita"], ["Para visualizar sua receita, acesse 'Minhas Receitas' no menu principal e selecione a receita desejada para abrir os detalhes."]],
+    10: [["Ver Resultados"], ["Seus resultados de exames estão disponíveis em 'Meus Resultados'. Basta acessar o menu e escolher o exame para visualizar o resultado."]]
 }
+
 
 historico = [0]
 posicao_no_historico = 0
