@@ -127,6 +127,7 @@ def render_corpo_mensagem(num_janela):
     print(f'''\n{ALTERNATIVAS.get(num_janela)[1][0]}''')
 
 def exibir_informativo(num_janela, ANCORA, VOLTAR):
+   
     #Conteúdo relativo ao número da janela
     render_titulo(num_janela)
     render_corpo_mensagem(num_janela)
@@ -159,7 +160,7 @@ def selecionar_alternativa(ANCORA, VOLTAR):
                 #voltar
                 #Volta para o penúltimo item do histórico, já dizia Justin Timberlake what goes around comes around
                 if(VOLTAR == 0):
-                    ANCORA = len(HISTORICO)
+                    ANCORA = len(HISTORICO)-1
                 VOLTAR += 1
                 alternativa_valor = HISTORICO[ANCORA - VOLTAR]
                 HISTORICO.append(alternativa_valor)
